@@ -1,7 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            label 'kaniko'
+            defaultContainer 'kaniko'
             yamlFile './kaniko.yaml'
         }
     }
