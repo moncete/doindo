@@ -11,6 +11,6 @@ spec:
     image: gcr.io/kaniko-project/executor:debug
     imagePullPolicy: Always
     command: 
-    - /busybox/cat
+    - /busybox/echo hola mundo
     tty: true
   restartPolicy: Never
