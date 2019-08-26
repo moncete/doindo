@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko
+  namespace: devtool
+  labels:
+    name: kaniko
+spec:
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:latest
+    imagePullPolicy: Always
+    command: 
+    - /busybox/cat
+    tty: true
+  restartPolicy: Never
