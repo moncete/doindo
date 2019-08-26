@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: kaniko
-  namespace: devtool
+  namespace: devtools
   labels:
     name: kaniko
 spec:
