@@ -1,3 +1,5 @@
+def ent = env.BUILD_NUMBER
+
 pipeline {
     agent {
         kubernetes {
@@ -16,7 +18,7 @@ pipeline {
                 container (name: 'kaniko', shell: '/busybox/sh') {
                     sh '''
                         #!/busybox/sh
-                        /kaniko/executor -f ./Dockerfile -c `pwd`--insecure --skip-tls-verify --cache=true --destination=10.152.183.58:5000/test
+                        /kaniko/executor -f ./Dockerfile -c `pwd`--insecure --skip-tls-verify --cache=true --destination=10.28.107.58:32460/repository/jenkins/test:"${ent}"
                     '''
                 }
             }

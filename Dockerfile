@@ -1,5 +1,5 @@
 FROM openjdk:11-jdk
-MAINTAINER Oleg Nenashev <o.v.nenashev@gmail.com>
+
 
 ARG VERSION=3.29
 ARG user=jenkins
