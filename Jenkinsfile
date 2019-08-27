@@ -18,7 +18,7 @@ pipeline {
                 container (name: 'kaniko', shell: '/busybox/sh') {
                     sh '''
                         #!/busybox/sh
-                        /kaniko/executor -f ./Dockerfile -c `pwd`--insecure --skip-tls-verify --cache=true --destination=10.28.107.58:32460/repository/jenkins/test:'${ent}'
+                        /kaniko/executor -f ./Dockerfile -c `pwd`--insecure --skip-tls-verify --cache=true --destination=10.28.107.58:32460/repository/jenkins/test:""${ent}""
                     '''
                 }
             }
