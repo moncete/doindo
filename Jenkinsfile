@@ -3,7 +3,7 @@ pipeline {
         kubernetes {
             label 'kaniko'
             defaultContainer 'kaniko'
-            yamlFile './kaniko.yaml'
+            yamlFile 'kaniko.yaml'
         }
     }
 
