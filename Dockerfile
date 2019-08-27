@@ -25,6 +25,8 @@ RUN mkdir /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR}
 RUN chown -R ${user}. /home/${user}/.jenkins
 RUN chown -R ${user}. ${AGENT_WORKDIR}
 
+
+USER ${user}
 VOLUME /home/${user}/.jenkins
 VOLUME ${AGENT_WORKDIR}
 WORKDIR /home/${user}
