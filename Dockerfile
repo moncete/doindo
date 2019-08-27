@@ -19,9 +19,11 @@ RUN curl --create-dirs -fsSLo /usr/share/jenkins/slave.jar https://repo.jenkins-
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar
 
-USER ${user}
+USER root
 ENV AGENT_WORKDIR=${AGENT_WORKDIR}
 RUN mkdir /home/${user}/.jenkins && mkdir -p ${AGENT_WORKDIR}
+RUN chown -R ${user}. /home/${user}/.jenkins
+RUN chown -R ${user}. ${AGENT_WORKDIR}
 
 VOLUME /home/${user}/.jenkins
 VOLUME ${AGENT_WORKDIR}
