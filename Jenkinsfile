@@ -20,7 +20,7 @@ pipeline {
                     sh '''
                         #!/busybox/sh
                         echo $tag
-                        /kaniko/executor -f ./Dockerfile -c `pwd`--insecure --skip-tls-verify --cache=true --destination=10.152.183.142:18081/test:$tag
+                        /kaniko/executor -f ./Dockerfile -c `pwd`--insecure --skip-tls-verify --cache=true --destination=10.152.183.100:18081/test:$tag
                     '''
                 }
             }
