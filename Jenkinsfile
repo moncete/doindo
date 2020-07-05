@@ -2,7 +2,7 @@ def ent = env.BUILD_NUMBER
 
 pipeline {
     agent {
-        kubernetes {
+        minishift {
             label 'kaniko'
             defaultContainer 'kaniko'
             yamlFile 'kaniko.yaml'
